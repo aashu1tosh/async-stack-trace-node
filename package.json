@@ -1,0 +1,38 @@
+{
+    "name": "async-context-demo",
+    "version": "1.0.0",
+    "description": "TypeScript demo showing how Node.js stores execution context during async operations",
+    "main": "dist/async-context-demo.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "npm run build && node dist/src/async-context-demo.js",
+        "dev": "ts-node src/async-context-demo.ts",
+        "debug": "npm run build && node --async-stack-traces dist/src/async-context-demo.js",
+        "debug-dev": "ts-node --transpile-only src/async-context-demo.ts --async-stack-traces",
+        "inspect": "npm run build && node --expose-gc --inspect dist/src/async-context-demo.js",
+        "inspect-dev": "node --inspect -r ts-node/register src/async-context-demo.ts",
+        "trace": "npm run build && node --trace-warnings --async-stack-traces dist/src/async-context-demo.js",
+        "heap": "npm run build && node --heapsnapshot-signal=SIGUSR2 --async-stack-traces dist/src/async-context-demo.js",
+        "clean": "rimraf dist",
+        "watch": "tsc --watch"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.17",
+        "@types/node": "^20.4.5",
+        "rimraf": "^5.0.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.6"
+    },
+    "keywords": [
+        "nodejs",
+        "typescript",
+        "async",
+        "execution-context",
+        "debugging"
+    ],
+    "author": "Demo",
+    "license": "MIT"
+}
